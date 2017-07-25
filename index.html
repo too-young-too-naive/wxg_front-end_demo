@@ -45,54 +45,50 @@
       </div>
     </nav>
     <div class="container theme-showcase">
-      <div class="jumbotron">
-        <angucomplete-alt id="ex1"
-                          focus-in="focusIn()"
-                          focus-out="focusOut()"
-                          placeholder="Search names"
-                          pause="100"
-                          selected-object="selected"
-                          local-data="names"
-                          search-fields="name"
-                          title-field="name"
-                          minlength="0"
-                          input-class="form-control form-control-small">
-        </angucomplete-alt>
-        <p ng-bind="message"></p>
-      </div>
+      <!--<div class="jumbotron">-->
+        <!--<angucomplete-alt id="ex1"-->
+                          <!--focus-in="focusIn()"-->
+                          <!--focus-out="focusOut()"-->
+                          <!--placeholder="Search names"-->
+                          <!--pause="100"-->
+                          <!--selected-object="selected"-->
+                          <!--local-data="names"-->
+                          <!--search-fields="name"-->
+                          <!--title-field="name"-->
+                          <!--minlength="0"-->
+                          <!--input-class="form-control form-control-small">-->
+        <!--</angucomplete-alt>-->
+        <!--<p ng-bind="message"></p>-->
+      <!--</div>-->
 
       <div class="jumbotron">
         <angucomplete-alt id="members"
                           placeholder="Search projects"
                           pause="200"
-                          local-data="okok"
                           minlength="1"
                           selected-object="testObj"
-                          remote-url="https://api.github.com/search/repositories"
-                          remote-url-request-formatter="remoteUrlRequestFn"
-                          remote-url-data-field="items"
+                          remote-url="http://10.96.97.182:3000/autocomplete?q="
+                          remote-url-data-field="matching_results"
                           title-field="name"
-                          description-field="description"
                           input-class="form-control form-control-small"
                           match-class="highlight"/>
       </div>
 
-      <div class="jumbotron">
-        <div angucomplete-alt
-             id="ex5"
-             placeholder="Search projects"
-             pause="500"
-             selected-object="selectedProject"
-             remote-url="https://api.github.com/search/repositories"
-             remote-url-request-formatter="remoteUrlRequestFn"
-             remote-url-data-field="items"
-             title-field="name"
-             description-field="description"
-             minlength="2"
-             input-class="form-control form-control-small"
-             match-class="highlight">
-        </div>
-      </div>
+      <!--<div class="jumbotron">-->
+        <!--<div angucomplete-alt-->
+             <!--id="ex5"-->
+             <!--placeholder="Search projects"-->
+             <!--pause="500"-->
+             <!--selected-object="selectedProject"-->
+             <!--remote-url="http://10.96.97.227:8086/kg/?"-->
+             <!--remote-url-data-field="items"-->
+             <!--title-field="name"-->
+             <!--description-field="description"-->
+             <!--minlength="2"-->
+             <!--input-class="form-control form-control-small"-->
+             <!--match-class="highlight">-->
+        <!--</div>-->
+      <!--</div>-->
 
       <div>
         <button ng-click="click()">button</button>
@@ -103,7 +99,13 @@
         <p>Search names: {{selected}}</p>
       </div>
       <div>
-        <p>Search projects: {{selectedProject}}</p>
+        <p>Search projects: {{testObj}}</p>
+      </div>
+
+      <div class="jumbotron">
+        <div>
+
+        </div>
       </div>
     </div>
 

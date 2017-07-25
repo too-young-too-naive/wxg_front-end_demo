@@ -2,7 +2,7 @@
 
 app = angular.module('app', ['angucomplete-alt']);
 
-app.controller('AppCtrl', function($scope) {
+app.controller('AppCtrl', function($scope, $http) {
 
   $scope.names = [
     {name: 'Alex', age: 30},
@@ -22,5 +22,6 @@ app.controller('AppCtrl', function($scope) {
   };
   $scope.click = function () {
       $scope.show = 'haha';
-  }
+      console.log('hahahahaha');
+  };
 });
