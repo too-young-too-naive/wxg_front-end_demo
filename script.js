@@ -1,6 +1,6 @@
 // Code goes here
 
-app = angular.module('app', ['angucomplete-alt']);
+app = angular.module('app', ['angucomplete-alt', 'jsonFormatter']);
 
 app.controller('AppCtrl', function($scope, $http) {
 
@@ -18,6 +18,7 @@ app.controller('AppCtrl', function($scope, $http) {
         } else {
             $scope.isTrue = true;
             $scope.results = res.records;
+            $scope.textarea = res.records;
         }
 
     }, function errorCallback(err) {

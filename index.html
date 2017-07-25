@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="angucomplete-alt.css" />
     <script src="angucomplete-alt.js"></script>
     <script src="script.js"></script>
+    <script src="node_modules/jsonformatter/dist/json-formatter.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="narrow-jumbotron.css">
@@ -34,12 +35,12 @@
 
     <div class="jumbotron">
       <h1 class="display-3">WXG AI Lab Demo</h1>
-      <p class="lead">Team Leader: Cheng Niu</p>
+      <p class="lead">Knowledge Graph searching demo<br>Team Leader: Cheng Niu</p>
       <div class="lead">
         <angucomplete-alt id="members"
                           placeholder="Search projects"
                           pause="200"
-                          minlength="1"
+                          minlength="0"
                           selected-object="testObj"
                           remote-url="http://10.96.97.182:3000/autocomplete?q="
                           remote-url-data-field="matching_results"
@@ -56,10 +57,17 @@
     </div>
 
     <div class="jumbotron" ng-show="isTrue">
-      <div class="jumbotron">
+      <div class="jumbotron text-left">
         <!--<p>Search projects: {{testObj}}</p>-->
         <p>{{results}}</p>
       </div>
+    </div>
+    <div class="jumbotron" ng-show="isTrue">
+      <div class="lead text-left">
+        <json-formatter json="textarea" open="1"></json-formatter>
+
+      </div>
+
     </div>
 
     <footer class="footer text-center">
