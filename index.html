@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="angular.js@1.2.22" data-semver="1.2.22" src="https://code.angularjs.org/1.2.22/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="angucomplete-alt.css" />
+    <script src="angucomplete-alt.js"></script>
+    <script src="script.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+
+  <body ng-app="app" ng-controller="AppCtrl">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Demo</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container theme-showcase">
+      <div class="jumbotron">
+        <angucomplete-alt id="ex1"
+                          focus-in="focusIn()"
+                          focus-out="focusOut()"
+                          placeholder="Search names"
+                          pause="100"
+                          selected-object="selected"
+                          local-data="names"
+                          search-fields="name"
+                          title-field="name"
+                          minlength="0"
+                          input-class="form-control form-control-small">
+        </angucomplete-alt>
+        <p ng-bind="message"></p>
+      </div>
+
+      <div class="jumbotron">
+        <angucomplete-alt id="members"
+                          placeholder="Search projects"
+                          pause="200"
+                          local-data="okok"
+                          minlength="1"
+                          selected-object="testObj"
+                          remote-url="https://api.github.com/search/repositories"
+                          remote-url-request-formatter="remoteUrlRequestFn"
+                          remote-url-data-field="items"
+                          title-field="name"
+                          description-field="description"
+                          input-class="form-control form-control-small"
+                          match-class="highlight"/>
+      </div>
+
+      <div class="jumbotron">
+        <div angucomplete-alt
+             id="ex5"
+             placeholder="Search projects"
+             pause="500"
+             selected-object="selectedProject"
+             remote-url="https://api.github.com/search/repositories"
+             remote-url-request-formatter="remoteUrlRequestFn"
+             remote-url-data-field="items"
+             title-field="name"
+             description-field="description"
+             minlength="2"
+             input-class="form-control form-control-small"
+             match-class="highlight">
+        </div>
+      </div>
+
+      <div>
+        <button ng-click="click()">button</button>
+        <p>{{show}}</p>
+      </div>
+
+      <div>
+        <p>Search names: {{selected}}</p>
+      </div>
+      <div>
+        <p>Search projects: {{selectedProject}}</p>
+      </div>
+    </div>
+
+  </body>
+
+</html>
