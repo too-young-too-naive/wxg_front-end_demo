@@ -2,66 +2,40 @@
 <html>
 
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script data-require="angular.js@1.2.22" data-semver="1.2.22" src="https://code.angularjs.org/1.2.22/angular.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="angucomplete-alt.css" />
     <script src="angucomplete-alt.js"></script>
     <script src="script.js"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="narrow-jumbotron.css">
   </head>
 
   <body ng-app="app" ng-controller="AppCtrl">
-    <nav class="navbar navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Demo</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-    <div class="container theme-showcase">
-      <!--<div class="jumbotron">-->
-        <!--<angucomplete-alt id="ex1"-->
-                          <!--focus-in="focusIn()"-->
-                          <!--focus-out="focusOut()"-->
-                          <!--placeholder="Search names"-->
-                          <!--pause="100"-->
-                          <!--selected-object="selected"-->
-                          <!--local-data="names"-->
-                          <!--search-fields="name"-->
-                          <!--title-field="name"-->
-                          <!--minlength="0"-->
-                          <!--input-class="form-control form-control-small">-->
-        <!--</angucomplete-alt>-->
-        <!--<p ng-bind="message"></p>-->
-      <!--</div>-->
+    <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">Smart Healthcare</h3>
+    </div>
 
-      <div class="jumbotron">
+    <div class="jumbotron">
+      <h1 class="display-3">WXG AI Lab Demo</h1>
+      <p class="lead">Team Leader: Cheng Niu</p>
+      <div class="lead">
         <angucomplete-alt id="members"
                           placeholder="Search projects"
                           pause="200"
@@ -73,41 +47,27 @@
                           input-class="form-control form-control-small"
                           match-class="highlight"/>
       </div>
-
-      <!--<div class="jumbotron">-->
-        <!--<div angucomplete-alt-->
-             <!--id="ex5"-->
-             <!--placeholder="Search projects"-->
-             <!--pause="500"-->
-             <!--selected-object="selectedProject"-->
-             <!--remote-url="http://10.96.97.227:8086/kg/?"-->
-             <!--remote-url-data-field="items"-->
-             <!--title-field="name"-->
-             <!--description-field="description"-->
-             <!--minlength="2"-->
-             <!--input-class="form-control form-control-small"-->
-             <!--match-class="highlight">-->
-        <!--</div>-->
-      <!--</div>-->
-
-      <div>
-        <button ng-click="click()">button</button>
-        <p>{{show}}</p>
+      <div class="lead">
+        <br>
       </div>
-
-      <div>
-        <p>Search names: {{selected}}</p>
-      </div>
-      <div>
-        <p>Search projects: {{testObj}}</p>
-      </div>
-
-      <div class="jumbotron">
-        <div>
-
-        </div>
+      <div class="lead">
+        <button class="btn btn-lg btn-success" ng-click="click()">Search</button>
       </div>
     </div>
+
+    <div class="jumbotron" ng-show="isTrue">
+      <div class="jumbotron">
+        <!--<p>Search projects: {{testObj}}</p>-->
+        <p>{{results}}</p>
+      </div>
+    </div>
+
+    <footer class="footer text-center">
+      <p>Made by <a href="https://github.com/too-young-too-naive/">Jinliang Guo</a>. For source code <a href="https://github.com/too-young-too-naive/wxg_front">here.</a> </p>
+    </footer>
+
+  </div>
+
 
   </body>
 
